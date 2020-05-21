@@ -8,10 +8,7 @@
   <!-- Links to StyleSheets & Sources -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
 
 </head>
 
@@ -150,13 +147,15 @@
     <br>
 
     <!-- Submit -->
-    <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit"><i class="fa fa-check-circle" aria-hidden="true"></i>
-     Submit</button>
+    <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit"><i class="fa fa-check-circle"
+        aria-hidden="true"></i>
+      Submit</button>
 
     <hr>
     <footer class="footer">
       <div class="container">
-        <p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/ashtinannb/Friend-Finder.git">GitHub Repo</a></p>
+        <p><a href="./data/friends">API Friends List</a> | <a
+            href="https://github.com/ashtinannb/Friend-Finder.git">GitHub Repo</a></p>
       </div>
     </footer>
 
@@ -174,7 +173,7 @@
         </div>
         <div class="modal-body">
           <h2 id="match-name"></h2>
-          <img id="match-img" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" alt="">
+          <img id="match-img" src="" alt="">
         </div>
         <div class="modal-footer">
           <button class="btn btn-default" data-dismiss="modal">Close</button>
@@ -183,9 +182,9 @@
 
     </div>
   </div>
-<!-- Script goes here -->
+  <!-- Scripts go here -->
   <script type="text/javascript">
-   
+
     var config = {
       ".chosen-select": {},
       ".chosen-select-deselect": {
@@ -206,19 +205,19 @@
       $(selector).chosen(config[selector]);
     }
 
-    
-    $("#submit").on("click", function(event) {
+
+    $("#submit").on("click", function (event) {
       event.preventDefault();
 
       function validateForm() {
         var isValid = true;
-        $(".form-control").each(function() {
+        $(".form-control").each(function () {
           if ($(this).val() === "") {
             isValid = false;
           }
         });
 
-        $(".chosen-select").each(function() {
+        $(".chosen-select").each(function () {
 
           if ($(this).val() === "") {
             isValid = false;
@@ -244,9 +243,9 @@
             $("#q10").val()
           ]
         };
-// AJAX posts data to api
-        $.post("/api/friends", userData, function(data) {
-//finds a match
+        // AJAX posts data to api
+        $.post("./data/friends", userData, function (data) {
+          //finds a match
           $("#match-name").text(data.name);
           $("#match-img").attr("src", data.photo);
 
@@ -259,6 +258,9 @@
       }
     });
   </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
 </body>
 
