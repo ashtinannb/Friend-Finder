@@ -6,8 +6,9 @@ var app = express();
 
 // establishes port
 var PORT = process.env.PORT || 8080;
-
-
+console.log('Dirname in server', __dirname);
+app.use(express.static(__dirname + '/app/public' ))
+app.use(express.static(__dirname + '/app/data' ))
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 

@@ -12,7 +12,7 @@ module.exports = function (app) {
   });
 
 
-
+console.log(__dirname, 'dir name in routes');
   app.post("/data/friends", function (req, res) {
 
     // constant loop to find best match
