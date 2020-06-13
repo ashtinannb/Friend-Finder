@@ -1,7 +1,54 @@
 body {
-    background-color: rosybrown;
+    font-family: 'Indie Flower', cursive;
+    background-color: #5fdde5;
 }
 
 .jumbotron {
-    background-color:ghostwhite;
+    font-family: 'Indie Flower', cursive;
+    color: #f4ea8e;
+    background-color:#f37121;
+}
+
+.btn-danger {
+    color: #f4ea8e;
+}
+
+#submit {
+    color: #f4ea8e;
+    font-size: 24px;
+}
+
+h5 {
+  color: #f37121;  
+    font-size: 60px;
+}
+
+h3 {
+    color: #f4ea8e;
+    font-size: 40px;
+}
+
+.container {
+    color: black;
+    font-size: 24px;
+}
+
+.my-name {
+    font-family: 'Indie Flower', cursive;
+    font-size: 36px;
+    color: black;
+    text-align: center;
+}
+
+#results-modal {
+    background-color: #f4ea8e;
+    color: #f37121
+}
+ 
+.modal-content {
+background-color: #5fdde5;
+} 
+
+.modal-title {
+    text-align: center;
 }
